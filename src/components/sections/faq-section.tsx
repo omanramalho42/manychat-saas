@@ -51,7 +51,7 @@ export function FaqSection() {
             <div className="rounded-2xl bg-card/50 border border-border backdrop-blur-sm p-8 mt-12">
               <h3 className="text-2xl font-bold mb-4">Still have a questions?</h3>
               <p className="text-muted-foreground mb-6">
-                Can't find the answer to your question? Send us an email and we'll get back to you as soon as possible!
+                Can&apos;t find the answer to your question? Send us an email and we&apos;ll get back to you as soon as possible!
               </p>
               <Button className="bg-gradient-to-r from-[rgb(var(--theme-primary))] to-[rgb(var(--theme-secondary))] hover:from-[rgb(var(--theme-primary-80))] hover:to-[rgb(var(--theme-primary))]">
                 Send email

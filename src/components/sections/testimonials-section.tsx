@@ -82,7 +82,7 @@ export function TestimonialsSection() {
               >
                 {/* Quote */}
                 <p className={`text-foreground leading-relaxed mb-6 ${testimonial.featured ? "text-lg" : "text-sm"}`}>
-                  "{testimonial.quote}"
+                  {" "}{testimonial.quote}{" "}
                 </p>
 
                 {/* Author Info */}

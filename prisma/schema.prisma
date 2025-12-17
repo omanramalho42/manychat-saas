@@ -37,8 +37,8 @@ model User {
   id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   clerkId   String   @unique
   email     String   @unique
-  firstName String?  @unique
-  lastName  String?  @unique
+  firstName String? 
+  lastName  String?
   createdAt DateTime @default(now())
 
   // RELATION ONE TO ONE
@@ -52,19 +52,23 @@ model User {
 }
 
 model Subscription {
-  id         String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  id         String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   plan       SUBSCRIPTION_PLAN @default(FREE)
   updatedAt  DateTime @default(now())
-  customerId String? @unique
+  customerId String?  @unique
 
-  User   User?  @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId String? @unique @db.Uuid
+  User   User?        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String?      @unique @db.Uuid
 }
 
 model Automation {
   id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   name      String   @default("Untitled")
   createdAt DateTime @default(now())
+  // updatedAt DateTime @updatedAt
+  // deletedAt DateTime?
+  // version Int @default(1)
+
   active    Boolean  @default(false)
 
   trigger  Trigger[]
@@ -72,7 +76,7 @@ model Automation {
   posts    Post[]
   dms      Dms[]
 
-  User   User?  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  User   User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId String? @db.Uuid
 
   keywords Keyword[]
@@ -81,7 +85,8 @@ model Automation {
 model Integrations {
   id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   name      INTEGRATIONS @default(INSTAGRAM)
-  createdAt DateTime @default(now())
+  createdAt DateTime     @default(now())
+  // updatedAt DateTime @updatedAt
 
   User   User?  @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId String? @db.Uuid

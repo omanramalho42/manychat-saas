@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { MousePointer, Flame, FileText } from "lucide-react"
 import { useTheme } from "@/contexts/theme-context"
+// import { useTheme } from "@/providers/theme-provider"
 
 const colorThemes = {
   starter: {

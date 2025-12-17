@@ -7,14 +7,15 @@ import { Analytics } from "@vercel/analytics/next"
 
 import {
   ClerkProvider,
-  SignInButton,
-  SignUpButton,
   SignedIn,
   SignedOut,
   UserButton,
 } from '@clerk/nextjs'
 
 import { ThemeProvider } from "@/contexts/theme-context"
+import { ThemeProvider as ThemeProviderShadcn } from "@/providers/theme-provider"
+
+import { Toaster } from "@/components/ui/sonner"
 
 import "./globals.css"
 
@@ -51,10 +52,20 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
           <body className={`font-sans antialiased`}>
-            <ThemeProvider>{children}</ThemeProvider>
+            {/* <ThemeProviderShadcn
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            > */}
+            <ThemeProvider>
+              {children}
+            </ThemeProvider>
+            {/* </ThemeProviderShadcn> */}
             <Analytics />
+            <Toaster />
           </body>
       </html>
     </ClerkProvider>

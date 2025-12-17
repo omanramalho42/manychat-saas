@@ -53,7 +53,7 @@ export function HeroSection() {
 
           {/* Subheadline */}
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto text-balance leading-relaxed mb-10">
-            Discover what drives results and what doesn&apos;t to boost your conversation efficiency with intelligent
+            Discover what drives results and what doesnt to boost your conversation efficiency with intelligent
             automation.
           </p>
 

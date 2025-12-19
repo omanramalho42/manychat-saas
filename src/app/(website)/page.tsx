@@ -14,7 +14,10 @@ import { Footer } from "@/components/footer"
 export default function HomeScreen() {
   return (
     <main className="min-h-screen">
-      <Header />
+      <p>
+        teste
+      </p>
+      {/* <Header /> */}
       {/* <HeroSection />
       <StatsSection />
       <LogosSection />
